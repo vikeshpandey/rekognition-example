@@ -4,7 +4,7 @@ import json
 
 
 
-new_value = {'image_size': [{'width': 960, 'height': 540, 'depth': 3}]}
+img_dimensions = {'image_size': [{'width': 960, 'height': 540, 'depth': 3}]}
 
 
 def edit_json():
@@ -13,7 +13,7 @@ def edit_json():
         data = json.load(read_file)
         for item in data.values():
             item['bounding-box'] = item.pop('size')
-            item['bounding-box'] = new_value
+            item['bounding-box'] = img_dimensions
             item['source-ref'] = "s3 bucket location"
             for region in item['regions'].values():
                 shape_attributes = region['shape_attributes']
