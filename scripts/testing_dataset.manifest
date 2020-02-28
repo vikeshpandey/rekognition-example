@@ -1,0 +1,168 @@
+{
+  "source-ref": "s3://pandvike-custom-label-testing-dataset/528.jpg",
+  "bounding-box": {
+    "annotations": [{
+      "left": 80,
+      "top": 131,
+      "width": 293,
+      "height": 175,
+      "annotationType": "bounding-box",
+      "id": 83,
+      "class_id": 9
+    }, {
+      "left": 630,
+      "top": 179,
+      "width": 174,
+      "height": 220,
+      "annotationType": "bounding-box",
+      "id": 84,
+      "class_id": 9
+    }, {
+      "left": 420,
+      "top": 260,
+      "width": 176,
+      "height": 53,
+      "annotationType": "bounding-box",
+      "id": 85,
+      "class_id": 5
+    }],
+    "image_size": [{
+      "width": 960,
+      "height": 540,
+      "depth": 3
+    }]
+  },
+  "bounding-box-metadata": {
+    "job-name": "labeling-job/bounding-box",
+    "class-map": {
+      "5": "soil",
+      "9": "truck"
+    },
+    "human-annotated": "yes",
+    "objects": [{
+      "confidence": 1
+    }, {
+      "confidence": 1
+    }, {
+      "confidence": 1
+    }],
+    "creation-date": "2020-02-26T14:28:45.928Z",
+    "type": "groundtruth/object-detection"
+  }
+}
+{
+  "source-ref": "s3://pandvike-custom-label-testing-dataset/1057.jpg",
+  "bounding-box": {
+    "annotations": [{
+      "left": 12,
+      "top": 255,
+      "width": 180,
+      "height": 88,
+      "annotationType": "bounding-box",
+      "id": 86,
+      "class_id": 0
+    }, {
+      "left": 349,
+      "top": 331,
+      "width": 56,
+      "height": 109,
+      "annotationType": "bounding-box",
+      "id": 87,
+      "class_id": 7
+    }, {
+      "left": 783,
+      "top": 327,
+      "width": 73,
+      "height": 136,
+      "annotationType": "bounding-box",
+      "id": 88,
+      "class_id": 7
+    }, {
+      "left": 125,
+      "top": 110,
+      "width": 137,
+      "height": 85,
+      "annotationType": "bounding-box",
+      "id": 89,
+      "class_id": 5
+    }],
+    "image_size": [{
+      "width": 960,
+      "height": 540,
+      "depth": 3
+    }]
+  },
+  "bounding-box-metadata": {
+    "job-name": "labeling-job/bounding-box",
+    "class-map": {
+      "0": "iron rod",
+      "5": "soil",
+      "7": "concrete"
+    },
+    "human-annotated": "yes",
+    "objects": [{
+      "confidence": 1
+    }, {
+      "confidence": 1
+    }, {
+      "confidence": 1
+    }, {
+      "confidence": 1
+    }],
+    "creation-date": "2020-02-26T14:29:38.125Z",
+    "type": "groundtruth/object-detection"
+  }
+}
+{
+  "source-ref": "s3://pandvike-custom-label-testing-dataset/227.jpg",
+  "bounding-box": {
+    "annotations": [{
+      "left": 270,
+      "top": 351,
+      "width": 157,
+      "height": 156,
+      "annotationType": "bounding-box",
+      "id": 90,
+      "class_id": 5
+    }, {
+      "left": 672,
+      "top": 128,
+      "width": 195,
+      "height": 83,
+      "annotationType": "bounding-box",
+      "id": 91,
+      "class_id": 8
+    }, {
+      "left": 596,
+      "top": 446,
+      "width": 181,
+      "height": 90,
+      "annotationType": "bounding-box",
+      "id": 92,
+      "class_id": 7
+    }],
+    "image_size": [{
+      "width": 960,
+      "height": 540,
+      "depth": 3
+    }]
+  },
+  "bounding-box-metadata": {
+    "job-name": "labeling-job/bounding-box",
+    "class-map": {
+      "5": "soil",
+      "7": "concrete",
+      "8": "crane"
+    },
+    "human-annotated": "yes",
+    "objects": [{
+      "confidence": 1
+    }, {
+      "confidence": 1
+    }, {
+      "confidence": 1
+    }],
+    "creation-date": "2020-02-26T14:30:09.985Z",
+    "type": "groundtruth/object-detection"
+  }
+}
