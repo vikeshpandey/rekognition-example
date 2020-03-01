@@ -4,7 +4,7 @@ import boto3
 
 
 def create_project(project_name):
-    client = boto3.client('rekognition')
+    client = boto3.client('rekognition', 'us-east-1')
 
     # Create a project
     print('Creating project:' + project_name)
@@ -15,7 +15,7 @@ def create_project(project_name):
 
 
 def train_model(project_arn, version_name, output_config, training_dataset, testing_dataset):
-    client = boto3.client('rekognition')
+    client = boto3.client('rekognition', 'us-east-1')
     print('starting training version no: ' + version_name)
 
     try:
@@ -25,7 +25,7 @@ def train_model(project_arn, version_name, output_config, training_dataset, test
             OutputConfig=output_config,
             TrainingData=training_dataset,
             TestingData=testing_dataset)
-
+        print("response::::",response)
         project_version_training_completed_waiter = client.get_waiter('project_version_training_completed')
         project_version_training_completed_waiter.wait(ProjectArn=project_arn, VersionNames=[version_name])
 
@@ -48,7 +48,8 @@ def main():
     output_config = json.loads('{"S3Bucket": "pandvike-custom-label-output", "S3KeyPrefix": "2802"}')
     training_dataset = json.loads(
         '{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "pandvike-custom-label-training-dataset", "Name": "training_dataset.manifest" } } } ] }')
-    testing_dataset = json.loads('{"AutoCreate":true}')
+    # testing_dataset = json.loads('{"AutoCreate":true}')
+
     testing_dataset = json.loads(
         '{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "pandvike-custom-label-testing-dataset", "Name": "testing_dataset.manifest" } } } ]}')
 
