@@ -43,7 +43,7 @@ def main():
     # project_name = 'custom-labels-05'
     # project_arn = create_project(project_name)
     project_arn = 'arn:aws:rekognition:us-east-1:018632230441:project/custom-labels-05/1582930535021'
-    version_name = '1.0'
+    version_name = '2.0'
 
     output_config = json.loads('{"S3Bucket": "pandvike-custom-label-output", "S3KeyPrefix": "2802"}')
     training_dataset = json.loads(
