@@ -40,18 +40,39 @@ def train_model(project_arn, version_name, output_config, training_dataset, test
 
 
 def main():
-    # project_name = 'custom-labels-05'
-    # project_arn = create_project(project_name)
-    project_arn = 'arn:aws:rekognition:us-east-1:018632230441:project/custom-labels-05/1582930535021'
-    version_name = '2.0'
 
-    output_config = json.loads('{"S3Bucket": "pandvike-custom-label-output", "S3KeyPrefix": "2802"}')
+    # project_arn = 'arn:aws:rekognition:us-east-1:018632230441:project/custom-labels-05/1582930535021'
+    # version_name = '3.0'
+    print("enter a project name for the example: ")
+    project_name = input()
+    project_arn = create_project(project_name)
+
+    print("enter a value for version for the example: ")
+    version_name = input()
+
+    print("enter the value for s3 bucket(without prefix) where the output will be stored: ")
+    s3_output_bucket = input()
+
+    print("enter the value for s3 bucket location(without prefix) containing training dataset: ")
+    training_dataset_location = input()
+
+    print("enter the name and path(if any subpath in bucket) for groundtruth manifest file for training bucket: ")
+    training_manifest_file = input()
+
+    print("enter the value for s3 bucket location(without prefix) containing testing dataset: ")
+    testing_dataset_location = input()
+
+    print("enter the name and path(if any subpath in bucket) for groundtruth manifest file for testing bucket: ")
+    testing_manifest_file = input()
+
+
+    output_config = json.loads('{"S3Bucket": "'+s3_output_bucket+'", "S3KeyPrefix": "out"}')
     training_dataset = json.loads(
-        '{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "pandvike-custom-label-training-dataset", "Name": "training_dataset.manifest" } } } ] }')
-    # testing_dataset = json.loads('{"AutoCreate":true}')
+        '{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "'+training_dataset_location+'", "Name": "'+training_manifest_file+'" } } } ] }')
+
 
     testing_dataset = json.loads(
-        '{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "pandvike-custom-label-testing-dataset", "Name": "testing_dataset.manifest" } } } ]}')
+        '{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "'+testing_dataset_location+'", "Name": "'+testing_manifest_file+'" } } } ]}')
 
     train_model(project_arn, version_name, output_config, training_dataset, testing_dataset)
 
