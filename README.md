@@ -7,7 +7,7 @@ This repo contains examples of capabilities of rekognition. Following examples a
 - detecting faces with bounding boxes
 - detecting labels in videos
 
-##Detecting custom labels
+## Detecting custom labels
 for detecting custom labels, the following pre-requisites should be met:
 
 - create three s3 buckets for containing training data, testing data and output of rekognition training job.
